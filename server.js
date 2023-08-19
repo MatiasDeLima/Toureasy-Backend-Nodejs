@@ -24,8 +24,18 @@ const connect = async () => {
     }
 };
 
+app.get('/', (req, res) => {
+    res.json("Hello");
+})
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["toureasy-backend-nodejs-awkimquuc-matiasdelima.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use('/tours', tourRouter);
 
 app.listen(port, () => {
