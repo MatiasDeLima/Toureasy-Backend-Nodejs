@@ -5,6 +5,8 @@ import cors from "cors";
 
 import tourRouter from "./routes/tours.js";
 
+const BASE_URL = 'https://toureasy-backend-nodejs.vercel.app';
+
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
@@ -30,7 +32,7 @@ app.get('/', (req, res) => {
 
 app.use(express.json());
 app.use(cors());
-app.use('/tours', tourRouter);
+app.use(`${BASE_URL}/tours`, tourRouter);
 
 app.listen(port, () => {
     connect();
