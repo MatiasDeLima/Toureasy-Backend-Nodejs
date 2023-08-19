@@ -26,10 +26,6 @@ const connect = async () => {
     }
 };
 
-app.get('/', (req, res) => {
-    res.json("Hello");
-})
-
 app.use(express.json());
 app.use(cors());
 app.use(`${BASE_URL}/tours`, tourRouter);
