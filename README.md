@@ -8,6 +8,12 @@
 
 <br />
 
+# 🔄 API Spec
+
+## Live Demo : https://toureasy-backend-nodejs.onrender.com/api/v1/
+
+<br />
+
 ## 🏂 **Tours**
 
 | URL                       | HTTP Verb | POST Body   | Authentication | Result                             |

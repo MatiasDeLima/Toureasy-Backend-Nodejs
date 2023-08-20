@@ -4,10 +4,17 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import tourRouter from "./routes/tours.js";
+import userRouter from "./routes/users.js";
+import authRouter from "./routes/auth.js";
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
+// o cors permite comunicao de diferentes urls
+const corsOptions = {
+    origin: true,
+    credentials: true
+}
 
 // connect mongoDb
 mongoose.set("strictQuery", false);
@@ -25,8 +32,10 @@ const connect = async () => {
 };
 
 app.use(express.json());
-app.use(cors());
-app.use('/tours', tourRouter);
+app.use(cors(corsOptions));
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
 
 app.listen(port, () => {
     connect();

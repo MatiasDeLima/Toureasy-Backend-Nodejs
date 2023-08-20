@@ -3,11 +3,14 @@ import { createTour, deleteTour, getAllTour, getFeaturedTour, getSingleTour, get
 
 const router = express.Router();
 
-router.post('/', createTour);
+// se for admin pode fazer essa operacoes no site
+import { verifyAdmin } from "../utils/tokenVesion.js";
 
-router.put('/:id', updateTour);
+router.post('/', verifyAdmin, createTour);
 
-router.delete('/:id', deleteTour);
+router.put('/:id', verifyAdmin, updateTour);
+
+router.delete('/:id', verifyAdmin, deleteTour);
 
 router.get('/:id', getSingleTour);
 
