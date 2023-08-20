@@ -12,8 +12,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 // o cors permite comunicao de diferentes urls
 const corsOptions = {
-    origin: true,
-    credentials: true
+    origin: '*',
 }
 
 // connect mongoDb
