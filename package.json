@@ -4,13 +4,10 @@
   "description": "",
   "type": "module",
   "main": "server.js",
-  "engines": {
-    "node": "18.x"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "npm i"
   },
   "keywords": [],
   "author": "",
@@ -23,9 +20,7 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
     "mongodb": "^5.7.0",
-    "mongoose": "^7.4.3"
-  },
-  "devDependencies": {
+    "mongoose": "^7.4.3",
     "nodemon": "^3.0.1"
   }
 }
